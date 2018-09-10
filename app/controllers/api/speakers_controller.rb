@@ -15,8 +15,7 @@ class Api::SpeakersController < ApplicationController
       last_name: params[:last_name],
       email: params[:email],
       gender: params[:gender],
-      age: params[:age],
-      speaker_id: params[:speaker_id]
+      age: params[:age]
     )
     if @speaker.save #happy path
       render 'show.json.jbuilder'
@@ -33,7 +32,7 @@ class Api::SpeakersController < ApplicationController
     @speaker.email = params[:email] || @speaker.email
     @speaker.gender = params[:gender] || @speaker.gender
     @speaker.age = params[:age] || @speaker.age
-    @speaker.speaker_id = params[:speaker_id] || @speaker.speaker_id
+
 
     if @speaker.save #happy path
       render 'show.json.jbuilder'
